@@ -6,6 +6,7 @@ IMAGE_LINGUAS = " "
 LICENSE = "MIT"
 
 IMAGE_INSTALL:append = " \
+    simple-library \
     usbutils \
     usbinit \
 "
