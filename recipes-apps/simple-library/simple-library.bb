@@ -1,6 +1,6 @@
-SUMMARY = "Simple Library Application"
+DESCRIPTION = "Simple Library with File Creator"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=placeholder"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=778c13aea1f6f0167c18e40f8ef05bc7"
 
 SRC_URI = "git://github.com/LNX500-summer-2025/Lab-Test.git;protocol=ssh;branch=LAB_TEST"
 SRCREV = "${AUTOREV}"
@@ -15,6 +15,7 @@ do_compile() {
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 ${S}/simple-library ${D}${bindir}
-    install -m 0755 ${S}/simple-library-test ${D}${bindir}
+    install -m 0755 simple-library ${D}${bindir}
+    install -m 0755 simple-library-test ${D}${bindir}
 }
+
