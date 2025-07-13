@@ -8,6 +8,7 @@ LICENSE = "MIT"
 IMAGE_INSTALL:append = " \
     usbutils \
     usbinit \
+    simple-library \
 "
 
 IMAGE_FEATURES:append = " \
