@@ -8,6 +8,7 @@ LICENSE = "MIT"
 IMAGE_INSTALL:append = " \
     usbutils \
     usbinit \
+    simple-library \
 "
 
 IMAGE_FEATURES:append = " \
@@ -19,3 +20,5 @@ IMAGE_FEATURES:append = " \
 
 DISTRO_FEATURES:append = " usbgadget"
 MACHINE_FEATURES:append = " usbgadget usbhost"
+IMAGE_FSTYPES += "wic.xz"
+
