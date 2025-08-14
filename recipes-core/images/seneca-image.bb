@@ -1,22 +1,19 @@
-IMAGE_BOOT_FILES = "${SPL_BINARYNAME} u-boot.${UBOOT_SUFFIX} tiboot3.bin k3-am625-beagleplay.dtb"
-
+DESCRIPTION = "Seneca Labs image for BeaglePlay"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+inherit core-image
 
-DISTRO_FEATURES:append = " usbgadget wayland opengl pam x11"
+# Handy features from the lab notes
+IMAGE_FEATURES:append = " ssh-server-openssh splash"
 
-CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
-
-CORE_IMAGE_BASE_INSTALL += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'weston-xwayland matchbox-terminal', '', d)}"
-
+# Pin exactly what we want (no packagegroup-core-full-cmdline)
 IMAGE_INSTALL:append = " \
     weston \
+    weston-seneca-config \
     matchbox-keyboard \
-    cairo  \
-    libgbm \
-    libdrm \
-    wayland \
-    mesa \
+    cairo \
+    libgpiod \
+    libgpiod-tools \
+    simple-library \
     sensor-dash \
+    reverse-parking \
 "
-
