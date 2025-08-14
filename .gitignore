@@ -1,0 +1,6 @@
+tmp/
+downloads/
+sstate-cache/
+build/
+*.swp
+.DS_Store
