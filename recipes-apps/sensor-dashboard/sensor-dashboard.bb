@@ -15,6 +15,8 @@ S = "${WORKDIR}/git"
 DEPENDS = "gtk+3"
 inherit pkgconfig
 
+EXTRA_OEMAKE = 'CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"'
+
 do_compile() {
     oe_runmake
 }
