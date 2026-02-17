@@ -1,21 +1,19 @@
-SUMMARY = "This is a base image created as example for courses"
+DESCRIPTION = "Seneca Labs image for BeaglePlay"
+LICENSE = "MIT"
 inherit core-image
 
-IMAGE_LINGUAS = " "
+# Handy features from the lab notes
+IMAGE_FEATURES:append = " ssh-server-openssh splash"
 
-LICENSE = "MIT"
-
+# Pin exactly what we want (no packagegroup-core-full-cmdline)
 IMAGE_INSTALL:append = " \
-    usbutils \
-    usbinit \
+    weston \
+    weston-seneca-config \
+    matchbox-keyboard \
+    cairo \
+    libgpiod \
+    libgpiod-tools \
+    simple-library \
+    sensor-dash \
+    reverse-parking \
 "
-
-IMAGE_FEATURES:append = " \
-    ssh-server-openssh \
-    splash \
-    tools-debug \
-    tools-sdk \
-"
-
-DISTRO_FEATURES:append = " usbgadget"
-MACHINE_FEATURES:append = " usbgadget usbhost"
